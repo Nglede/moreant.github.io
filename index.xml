@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Moreants' Blog</title><link>https://moreant.github.io/</link><description>Recent content on Moreants' Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 13 Nov 2021 10:30:15 +0800</lastBuildDate><atom:link href="https://moreant.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows 远程时提示CredSSP 加密数据库修正。</title><link>https://moreant.github.io/p/win-remote-credssp/</link><pubDate>Sat, 13 Nov 2021 10:30:15 +0800</pubDate><guid>https://moreant.github.io/p/win-remote-credssp/</guid><description>&lt;img src="https://moreant.github.io/p/win-remote-credssp/error-img.png" alt="Featured image of post Windows 远程时提示CredSSP 加密数据库修正。" />&lt;h2 id="1-打开策略控制台">1. 打开策略控制台&lt;/h2>
+&lt;p>Win + R 打开运行，执行以下指令&lt;/p>
+&lt;pre tabindex="0">&lt;code>gpedit.msc
+&lt;/code>&lt;/pre>&lt;p>打开：计算机设置-&amp;gt;管理模板-&amp;gt;系统-&amp;gt;凭据分配-&amp;gt;加密数据库修正&lt;br>
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 176;
+flex-basis: 424px"
+>
+&lt;a href="https://moreant.github.io/p/win-remote-credssp/setting-postiton.png" data-size="1094x619">
+&lt;img src="https://moreant.github.io/p/win-remote-credssp/setting-postiton.png"
+width="1094"
+height="619"
+srcset="https://moreant.github.io/p/win-remote-credssp/setting-postiton_hu20480ad168a15197e6f97877d0e91457_102881_480x0_resize_box_3.png 480w, https://moreant.github.io/p/win-remote-credssp/setting-postiton_hu20480ad168a15197e6f97877d0e91457_102881_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+>
+&lt;/a>
+&lt;/figure>&lt;/p>
+&lt;p>修改为：已启用-&amp;gt;易受攻击&lt;br>
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 107;
+flex-basis: 258px"
+>
+&lt;a href="https://moreant.github.io/p/win-remote-credssp/setting.png" data-size="694x645">
+&lt;img src="https://moreant.github.io/p/win-remote-credssp/setting.png"
+width="694"
+height="645"
+srcset="https://moreant.github.io/p/win-remote-credssp/setting_huee2c9e69c2a1951625accf3358c6c09a_53725_480x0_resize_box_3.png 480w, https://moreant.github.io/p/win-remote-credssp/setting_huee2c9e69c2a1951625accf3358c6c09a_53725_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+>
+&lt;/a>
+&lt;/figure>&lt;/p>
+&lt;blockquote>
+&lt;p>来源&lt;br>
+&lt;a class="link" href="https://www.cnblogs.com/jinanxiaolaohu/p/13111721.html" target="_blank" rel="noopener"
+>https://www.cnblogs.com/jinanxiaolaohu/p/13111721.html&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>windows 任务栏图标变白</title><link>https://moreant.github.io/p/win-task-white/</link><pubDate>Sat, 13 Nov 2021 09:23:15 +0800</pubDate><guid>https://moreant.github.io/p/win-task-white/</guid><description>&lt;p>如描述&lt;/p>
+&lt;blockquote>
+&lt;p>来源&lt;br>
+&lt;a class="link" href="https://www.365jz.com/article/24741" target="_blank" rel="noopener"
+>https://www.365jz.com/article/24741&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>解决 Git Bash 中文乱码</title><link>https://moreant.github.io/p/git-cn-code/</link><pubDate>Sun, 07 Nov 2021 23:06:06 +0800</pubDate><guid>https://moreant.github.io/p/git-cn-code/</guid><description>&lt;img src="https://moreant.github.io/p/git-cn-code/p1.png" alt="Featured image of post 解决 Git Bash 中文乱码" />&lt;h2 id="1-git-log-乱码">1. git log 乱码&lt;/h2>
+&lt;p>&lt;code>git log&lt;/code> 出现乱码，直接更新到最新版本即可，打开 Git Bash 输入以下内容更新。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">git update-git-for-windows
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="2-git-bash-中文输入异常">2. git bash 中文输入异常&lt;/h2>
+&lt;p>git bash 输入中文之后删除的话会出现异常，如下&lt;br>
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 258;
+flex-basis: 619px"
+>
+&lt;a href="https://moreant.github.io/p/git-cn-code/p1.png" data-size="612x237">
+&lt;img src="https://moreant.github.io/p/git-cn-code/p1.png"
+width="612"
+height="237"
+srcset="https://moreant.github.io/p/git-cn-code/p1_hu142973081892cc9f207720f0f921bfdb_85574_480x0_resize_box_3.png 480w, https://moreant.github.io/p/git-cn-code/p1_hu142973081892cc9f207720f0f921bfdb_85574_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+>
+&lt;/a>
+&lt;/figure>&lt;/p>
+&lt;p>解决办法如下，在 bash 中执行以下指令编辑 ~/.bashrc 文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">touch ~/.bashr
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>粘贴以下内容&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">export&lt;/span> &lt;span class="nv">LC_ALL&lt;/span>&lt;span class="o">=&lt;/span>zh_CN.UTF-8
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>按 &lt;code>Esc&lt;/code> 键退出编辑模式，按 &lt;code>:&lt;/code> 键盘进入指令模式，输入 &lt;code>x&lt;/code> 回车，保存并退出。&lt;/p>
+&lt;p>重启 git bash 即可正常输入中文。&lt;/p></description></item><item><title>ssh自动登录</title><link>https://moreant.github.io/p/ssh-auto-login/</link><pubDate>Wed, 29 Sep 2021 23:09:11 +0800</pubDate><guid>https://moreant.github.io/p/ssh-auto-login/</guid><description>&lt;img src="https://moreant.github.io/p/ssh-auto-login/ssh-logo.png" alt="Featured image of post ssh自动登录" />&lt;p>切换到 .ssh 目录如果没有就新建一个&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">cd&lt;/span> ~/.ssh
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成 ssh key， -f 可以指定生成具体名称的 ssh key，&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">ssh-keygen -f keyname
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>把公钥文件拷贝到指定的服务器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">ssh-copy-id -i keyname.pub root@hostname
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>在.ssh/config 配置文件中加上连接配置即可，如果是使用 id_rsa.pub 的话无需设置 IdentityFile。&lt;/p>
+&lt;pre tabindex="0">&lt;code>HOST sshname
+HostName hostname
+user root
+IdentityFile ~/.ssh/keyname
+&lt;/code>&lt;/pre>&lt;p>之后就可以用 ssh sshname 登录了&lt;/p>
+&lt;blockquote>
+&lt;p>来源：&lt;br>
+&lt;a class="link" href="https://segmentfault.com/q/1010000002445731" target="_blank" rel="noopener"
+>https://segmentfault.com/q/1010000002445731&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Vite 项目启动 esbuild 异常</title><link>https://moreant.github.io/p/vite-strat-esbuild-install-error/</link><pubDate>Mon, 30 Aug 2021 01:23:15 +0800</pubDate><guid>https://moreant.github.io/p/vite-strat-esbuild-install-error/</guid><description>&lt;img src="https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error.png" alt="Featured image of post Vite 项目启动 esbuild 异常" />&lt;h2 id="问题描述">问题描述&lt;/h2>
+&lt;pre tabindex="0">&lt;code>➜ frontend git:(master) ✗ npm run dev
+&amp;gt; frontend@0.0.0 dev
+&amp;gt; vite
+/Users/moreant/work/mpcb/frontend/node_modules/esbuild/bin/esbuild:2
+throw new Error(`esbuild: Failed to install correctly
+^
+Error: esbuild: Failed to install correctly
+Make sure you don't have &amp;quot;ignore-scripts&amp;quot; set to true. You can check this with
+&amp;quot;npm config get ignore-scripts&amp;quot;. If that returns true you can reset it back to
+false using &amp;quot;npm config set ignore-scripts false&amp;quot; and then reinstall esbuild.
+If you're using npm v7, make sure your package-lock.json file contains either
+&amp;quot;lockfileVersion&amp;quot;: 1 or the code &amp;quot;hasInstallScript&amp;quot;: true. If it doesn't have
+either of those, then it is likely the case that a known bug in npm v7 has
+corrupted your package-lock.json file. Regenerating your package-lock.json file
+should fix this issue.
+&lt;/code>&lt;/pre>&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 172;
+flex-basis: 414px"
+>
+&lt;a href="https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error.png" data-size="1276x738">
+&lt;img src="https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error.png"
+width="1276"
+height="738"
+srcset="https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_480x0_resize_box_3.png 480w, https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="控制台报错">
+&lt;/a>
+&lt;figcaption>控制台报错&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="解决方法">解决方法&lt;/h2>
+&lt;p>执行以下指令来手动安装 &lt;code>esbuild&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">node node_modules/esbuild/install.js
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后就可以正常启动 Vite 项目了&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://blog.csdn.net/m0_37682004/article/details/115001613" target="_blank" rel="noopener"
+>1. vite安装vue项目报错（Error: esbuild: Failed to install correctly）&lt;/a>&lt;br>
+&lt;a class="link" href="https://github.com/evanw/esbuild/issues/462#issuecomment-782833191" target="_blank" rel="noopener"
+>2. Broken install binary on macOS&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>m1 nvm 安装 node 异常</title><link>https://moreant.github.io/p/m1-install-nvm-error/</link><pubDate>Fri, 27 Aug 2021 23:51:45 +0800</pubDate><guid>https://moreant.github.io/p/m1-install-nvm-error/</guid><description>&lt;img src="https://moreant.github.io/p/m1-install-nvm-error/terminal-error.png" alt="Featured image of post m1 nvm 安装 node 异常" />&lt;h2 id="问题描述">问题描述&lt;/h2>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 141;
+flex-basis: 338px"
+>
+&lt;a href="https://moreant.github.io/p/m1-install-nvm-error/terminal-error.png" data-size="1364x966">
+&lt;img src="https://moreant.github.io/p/m1-install-nvm-error/terminal-error.png"
+width="1364"
+height="966"
+srcset="https://moreant.github.io/p/m1-install-nvm-error/terminal-error_hubfc861c7a92064a2f6e1c494abd36bd6_433934_480x0_resize_box_3.png 480w, https://moreant.github.io/p/m1-install-nvm-error/terminal-error_hubfc861c7a92064a2f6e1c494abd36bd6_433934_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="控制台报错">
+&lt;/a>
+&lt;figcaption>控制台报错&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="解决方法">解决方法&lt;/h2>
+&lt;p>需要先执行以下指令再进行安装&lt;/p>
+&lt;pre tabindex="0">&lt;code>arch -x86_64 zsh
+&lt;/code>&lt;/pre>&lt;p>应该是因为 v14 及以前的版本不支持 arm 版本的处理器，所以需要使用 Rosetta 2 来进行安装。&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://blog.csdn.net/longgege001/article/details/114067242" target="_blank" rel="noopener"
+>mac M1 nvm 安装问题_CSDN&lt;/a>&lt;br>
+&lt;a class="link" href="https://github.com/nvm-sh/nvm/issues/2350#issuecomment-734132550" target="_blank" rel="noopener"
+>nvm install node fails to install on macOS Big Sur M1 Chip&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Clash for Windows 在 macOS 安装后无法打开，提示损坏</title><link>https://moreant.github.io/p/clash-fo-mac/</link><pubDate>Sat, 14 Aug 2021 04:02:21 +0800</pubDate><guid>https://moreant.github.io/p/clash-fo-mac/</guid><description>&lt;img src="not-open.png" style="margin:0 auto;width:400px;display:block" />
+网络下载应用被 Apple 添加隔离标识，终端输入命令解除即可：
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">sudo xattr -r -d com.apple.quarantine /Applications/Clash&lt;span class="se">\ &lt;/span>&lt;span class="k">for&lt;/span>&lt;span class="se">\ &lt;/span>Windows.app
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>附上完整文档地址：&lt;br>
+&lt;a class="link" href="https://docs.cfw.lbyczf.com/contents/questions.html" target="_blank" rel="noopener"
+>https://docs.cfw.lbyczf.com/contents/questions.html&lt;/a>&lt;/p></description></item><item><title>Npm 换源</title><link>https://moreant.github.io/p/npm-registry/</link><pubDate>Sat, 14 Aug 2021 01:53:02 +0800</pubDate><guid>https://moreant.github.io/p/npm-registry/</guid><description>&lt;p>鉴于网上内容大部分过于啰嗦，故自己记录一下&lt;/p>
+&lt;h2 id="淘宝源">淘宝源&lt;/h2>
+&lt;ol>
+&lt;li>本项目使用&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">npm install --registry&lt;span class="o">=&lt;/span>https://registry.npm.taobao.org
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>全局使用&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">npm config &lt;span class="nb">set&lt;/span> registry https://registry.npm.taobao.org
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;br>&lt;br>&lt;/p>
+&lt;h2 id="官方源">官方源&lt;/h2>
+&lt;ol>
+&lt;li>本项目使用&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">npm install --registry&lt;span class="o">=&lt;/span>https://registry.npmjs.org/
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>全局使用&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">npm config &lt;span class="nb">set&lt;/span> registry https://registry.npmjs.org/
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>大象已死</title><link>https://moreant.github.io/p/the-elephant-is-dead/</link><pubDate>Thu, 15 Jul 2021 23:09:48 +0800</pubDate><guid>https://moreant.github.io/p/the-elephant-is-dead/</guid><description>&lt;img src="https://moreant.github.io/p/the-elephant-is-dead/under-the-dome.jpeg" alt="Featured image of post 大象已死" />&lt;p>回形针无了，感觉很可惜。&lt;br>
+混乱博物馆也没了，感觉很意外。&lt;/p>
+&lt;p>当年在寒假的最后一天看到了穹顶之下，觉得大有收获。&lt;br>
+知道了什么是雾霾，知道了雾霾的危害。&lt;br>
+就是其中有些内容感觉有些奇怪，比如能源市场化，怎么就能解决空气污染。&lt;/p>
+&lt;p>在一个闲暇时刻，看到回形针更新了。第一时间点进去看完，好像是关于巴西雨林的。&lt;br>
+果然是过度开采导致雨林减少了。&lt;br>
+但是就是有点奇怪，巴西雨林过度开采，跟我吃肉蛋奶有什么关系。&lt;/p>
+&lt;p>可惜就是不知道之后还能在哪里看到如此优秀的可视化科普，&lt;br>
+意外就是混乱博物馆的内容其实并没有多公知。&lt;/p>
+&lt;p>害，说明国人还是有能力做出优秀的高质量视频的，希望下一个“回形针”不要再吃美国狗粮了。&lt;/p></description></item><item><title>IDEA 项目启动报错 Command line is too long</title><link>https://moreant.github.io/p/idea-command-line-is-too-long/</link><pubDate>Thu, 15 Jul 2021 10:10:00 +0800</pubDate><guid>https://moreant.github.io/p/idea-command-line-is-too-long/</guid><description>&lt;p>在项目的 .idea/workspace.xml 文件中，找到&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;component&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;PropertiesComponent&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>下面添加一行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;property&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;dynamic.classpath&amp;#34;&lt;/span> &lt;span class="na">value=&lt;/span>&lt;span class="s">&amp;#34;true&amp;#34;&lt;/span> &lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Hello Hugo!</title><link>https://moreant.github.io/p/hello-hugo/</link><pubDate>Sat, 10 Jul 2021 22:25:58 +0800</pubDate><guid>https://moreant.github.io/p/hello-hugo/</guid><description>&lt;p>因为这个主题好看，我从hexo转到了hugo。
+Webify Test&lt;/p></description></item></channel></rss>

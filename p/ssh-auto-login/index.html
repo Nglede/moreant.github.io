@@ -1,0 +1,221 @@
+<!doctype html><html lang=zh-cn>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="只需要 ssh name 就登录了"><title>ssh自动登录</title>
+<link rel=canonical href=https://moreant.github.io/p/ssh-auto-login/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="ssh自动登录">
+<meta property="og:description" content="只需要 ssh name 就登录了">
+<meta property="og:url" content="https://moreant.github.io/p/ssh-auto-login/">
+<meta property="og:site_name" content="Moreants' Blog">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="linux"><meta property="article:published_time" content="2021-09-29T23:09:11+08:00"><meta property="article:modified_time" content="2021-09-29T23:09:11+08:00"><meta property="og:image" content="https://moreant.github.io/p/ssh-auto-login/ssh-logo.png">
+<meta name=twitter:title content="ssh自动登录">
+<meta name=twitter:description content="只需要 ssh name 就登录了"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://moreant.github.io/p/ssh-auto-login/ssh-logo.png">
+<link rel="shortcut icon" href=/img/favicon.png>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=https://thirdwx.qlogo.cn/mmopen/vi_32/8yYGmv0Vme0ZCyNvvDDSxd5PibzIywKVazQmpibibTWY126GaVaVpFEg0MBd9HLXP0wYOUY4Q49oAZwVENX6Tg1Ow/132 width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<span class=emoji>🧐</span>
+</figure>
+<h1 class=site-name><a href=/>Moreants' Blog</a></h1>
+<h2 class=site-description>学习即输入输出</h2></header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href=/about/>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=/archives/>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=/search/>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=/index.xml target=_blank>
+<span>RSS</span>
+</a>
+</li>
+<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/ssh-auto-login/>
+<img src=/p/ssh-auto-login/ssh-logo_hue9c481a7e321cdbf047e315b8d5d4cd7_65747_800x0_resize_box_3.png srcset="/p/ssh-auto-login/ssh-logo_hue9c481a7e321cdbf047e315b8d5d4cd7_65747_800x0_resize_box_3.png 800w, /p/ssh-auto-login/ssh-logo_hue9c481a7e321cdbf047e315b8d5d4cd7_65747_1600x0_resize_box_3.png 1600w" width=800 height=497 loading=lazy alt="Featured image of post ssh自动登录">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/dev/ style=background-color:#3b82f6;color:#fff>
+开发填坑
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/ssh-auto-login/>ssh自动登录</a>
+</h2>
+<h3 class=article-subtitle>
+只需要 ssh name 就登录了
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Sep 29, 2021</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+阅读时长: 1 分钟
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>切换到 .ssh 目录如果没有就新建一个</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> ~/.ssh 
+</code></pre></div><p>生成 ssh key， -f 可以指定生成具体名称的 ssh key，</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-keygen -f keyname
+</code></pre></div><p>把公钥文件拷贝到指定的服务器</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-copy-id -i keyname.pub root@hostname 
+</code></pre></div><p>在.ssh/config 配置文件中加上连接配置即可，如果是使用 id_rsa.pub 的话无需设置 IdentityFile。</p>
+<pre tabindex=0><code>HOST sshname
+    HostName hostname
+    user root
+    IdentityFile ~/.ssh/keyname
+</code></pre><p>之后就可以用 ssh sshname 登录了</p>
+<blockquote>
+<p>来源：<br>
+<a class=link href=https://segmentfault.com/q/1010000002445731 target=_blank rel=noopener>https://segmentfault.com/q/1010000002445731</a></p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/linux/>linux</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>相关文章</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=/p/vite-strat-esbuild-install-error/>
+<div class=article-image>
+<img src=/p/vite-strat-esbuild-install-error/terminal-error.fc6352764930722da3b6e0610b1a2517_hu9e697a37c57dbf0cdd440db8d9983216_464300_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=vite-strat-esbuild-install-error data-hash="md5-/GNSdkkwci2jtuBhCxolFw==">
+</div>
+<div class=article-details>
+<h2 class=article-title>Vite 项目启动 esbuild 异常</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/p/m1-install-nvm-error/>
+<div class=article-image>
+<img src=/p/m1-install-nvm-error/terminal-error.bedc374efd483ddb95c22d8b9290021a_hubfc861c7a92064a2f6e1c494abd36bd6_433934_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=m1-install-nvm-error data-hash="md5-vtw3Tv1IPduVwi2LkpACGg==">
+</div>
+<div class=article-details>
+<h2 class=article-title>m1 nvm 安装 node 异常</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/npm-registry/>
+<div class=article-details>
+<h2 class=article-title>Npm 换源</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/idea-command-line-is-too-long/>
+<div class=article-details>
+<h2 class=article-title>IDEA 项目启动报错 Command line is too long</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<div class=tcomment-container>
+<div id=tcomment></div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/twikoo@1.4.1/dist/twikoo.all.min.js></script>
+<script>twikoo.init({envId:'https://twikoo-pied-xi.vercel.app/',el:'#tcomment'})</script>
+<style>.tcomment-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2020 -
+2022 Moreants' Blog
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

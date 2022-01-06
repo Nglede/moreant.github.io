@@ -1,0 +1,219 @@
+<!doctype html><html lang=zh-cn>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="throw new Error(`esbuild: Failed to install correctly"><title>Vite 项目启动 esbuild 异常</title>
+<link rel=canonical href=https://moreant.github.io/p/vite-strat-esbuild-install-error/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Vite 项目启动 esbuild 异常">
+<meta property="og:description" content="throw new Error(`esbuild: Failed to install correctly">
+<meta property="og:url" content="https://moreant.github.io/p/vite-strat-esbuild-install-error/">
+<meta property="og:site_name" content="Moreants' Blog">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="javascript"><meta property="article:tag" content="M1-Question"><meta property="article:published_time" content="2021-08-30T01:23:15+08:00"><meta property="article:modified_time" content="2021-08-30T01:23:15+08:00"><meta property="og:image" content="https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error.png">
+<meta name=twitter:title content="Vite 项目启动 esbuild 异常">
+<meta name=twitter:description content="throw new Error(`esbuild: Failed to install correctly"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://moreant.github.io/p/vite-strat-esbuild-install-error/terminal-error.png">
+<link rel="shortcut icon" href=/img/favicon.png>
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>返回</span>
+</a>
+</div>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/vite-strat-esbuild-install-error/>
+<img src=/p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_800x0_resize_box_3.png srcset="/p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_800x0_resize_box_3.png 800w, /p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_1600x0_resize_box_3.png 1600w" width=800 height=463 loading=lazy alt="Featured image of post Vite 项目启动 esbuild 异常">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/dev/ style=background-color:#3b82f6;color:#fff>
+开发填坑
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/vite-strat-esbuild-install-error/>Vite 项目启动 esbuild 异常</a>
+</h2>
+<h3 class=article-subtitle>
+throw new Error(`esbuild: Failed to install correctly
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Aug 30, 2021</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+阅读时长: 1 分钟
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=问题描述>问题描述</h2>
+<pre tabindex=0><code>➜  frontend git:(master) ✗ npm run dev
+
+&gt; frontend@0.0.0 dev
+&gt; vite
+
+/Users/moreant/work/mpcb/frontend/node_modules/esbuild/bin/esbuild:2
+throw new Error(`esbuild: Failed to install correctly
+^
+
+Error: esbuild: Failed to install correctly
+
+Make sure you don't have &quot;ignore-scripts&quot; set to true. You can check this with
+&quot;npm config get ignore-scripts&quot;. If that returns true you can reset it back to
+false using &quot;npm config set ignore-scripts false&quot; and then reinstall esbuild.
+
+If you're using npm v7, make sure your package-lock.json file contains either
+&quot;lockfileVersion&quot;: 1 or the code &quot;hasInstallScript&quot;: true. If it doesn't have
+either of those, then it is likely the case that a known bug in npm v7 has
+corrupted your package-lock.json file. Regenerating your package-lock.json file
+should fix this issue.
+</code></pre><p><figure class=gallery-image style=flex-grow:172;flex-basis:414px>
+<a href=/p/vite-strat-esbuild-install-error/terminal-error.png data-size=1276x738>
+<img src=/p/vite-strat-esbuild-install-error/terminal-error.png width=1276 height=738 srcset="/p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_480x0_resize_box_3.png 480w, /p/vite-strat-esbuild-install-error/terminal-error_hu9e697a37c57dbf0cdd440db8d9983216_464300_1024x0_resize_box_3.png 1024w" loading=lazy alt=控制台报错>
+</a>
+<figcaption>控制台报错</figcaption>
+</figure></p>
+<h2 id=解决方法>解决方法</h2>
+<p>执行以下指令来手动安装 <code>esbuild</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh>node node_modules/esbuild/install.js
+</code></pre></div><p>然后就可以正常启动 Vite 项目了</p>
+<h2 id=参考资料>参考资料</h2>
+<blockquote>
+<p><a class=link href=https://blog.csdn.net/m0_37682004/article/details/115001613 target=_blank rel=noopener>1. vite安装vue项目报错（Error: esbuild: Failed to install correctly）</a><br>
+<a class=link href=https://github.com/evanw/esbuild/issues/462#issuecomment-782833191 target=_blank rel=noopener>2. Broken install binary on macOS</a></p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/javascript/>JavaScript</a>
+<a href=/tags/m1-question/>M1-Question</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>相关文章</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=/p/m1-install-nvm-error/>
+<div class=article-image>
+<img src=/p/m1-install-nvm-error/terminal-error.bedc374efd483ddb95c22d8b9290021a_hubfc861c7a92064a2f6e1c494abd36bd6_433934_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=m1-install-nvm-error data-hash="md5-vtw3Tv1IPduVwi2LkpACGg==">
+</div>
+<div class=article-details>
+<h2 class=article-title>m1 nvm 安装 node 异常</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/npm-registry/>
+<div class=article-details>
+<h2 class=article-title>Npm 换源</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/p/ssh-auto-login/>
+<div class=article-image>
+<img src=/p/ssh-auto-login/ssh-logo.d19b009f35cb8735cab38e11e956c784_hue9c481a7e321cdbf047e315b8d5d4cd7_65747_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=ssh-auto-login data-hash="md5-0ZsAnzXLhzXKs44R6VbHhA==">
+</div>
+<div class=article-details>
+<h2 class=article-title>ssh自动登录</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/idea-command-line-is-too-long/>
+<div class=article-details>
+<h2 class=article-title>IDEA 项目启动报错 Command line is too long</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<div class=tcomment-container>
+<div id=tcomment></div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/twikoo@1.4.1/dist/twikoo.all.min.js></script>
+<script>twikoo.init({envId:'https://twikoo-pied-xi.vercel.app/',el:'#tcomment'})</script>
+<style>.tcomment-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2020 -
+2022 Moreants' Blog
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">目录</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#问题描述>问题描述</a></li>
+<li><a href=#解决方法>解决方法</a></li>
+<li><a href=#参考资料>参考资料</a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
